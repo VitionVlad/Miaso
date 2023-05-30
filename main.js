@@ -3,6 +3,7 @@ var locked = true;
 var minushp = 1;
 
 function unlock(){
+    document.getElementById("render").requestPointerLock();
     locked = false;
 }
 
@@ -80,7 +81,7 @@ function main(){
         var touchpos = new vec2(x, y);
         if(stillt === true){
             if(touchpos.x < resolution.x/2){
-                eng.rot.x += ((((touchpos.x/resolution.x)*2)*2)-1)/100;
+                eng.rot.x += ((((touchpos.x/resolution.x)*2)*2)-1)/10;
                 eng.rot.y -= ((((-touchpos.y/resolution.y)*2) +1)*0.01);
             }else if(touchpos.x > resolution.x/2){
                 attack = true;
